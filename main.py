@@ -11,6 +11,6 @@ def read_root():
 
 
 @app.get("/items/{Color}")
-def read_item(Color: string, Available: Optional[str] = None):
+def read_item(Color: str, Available: Optional[str] = None):
     return {"Car Color": item_id, "Available": q}
 
