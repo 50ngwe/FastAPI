@@ -10,7 +10,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"Car Color": item_id, "Red": q}
+@app.get("/items/{Color}")
+def read_item(Color: string, Available: Optional[str] = None):
+    return {"Car Color": item_id, "Available": q}
 
