@@ -25,7 +25,7 @@ def update_one(reserve_id):
     reserve = reserve_id
     connection = conn()
     cursor = connection.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('UPDATE public."Cars_Inventory" SET available="test" WHERE item_id="1";')
+    cursor.execute('UPDATE public."Cars_Inventory" SET available="test" WHERE item_id='+reserve+';')
     connection.commit()
 
 def handle_results(rows):
