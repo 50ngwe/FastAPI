@@ -21,12 +21,14 @@ def read_item(item_id: str, q: Optional[str] = None):
     return results
 
 @app.get("/items/{q_field}/{q_val}")
-def read_item(q_field: str, q_val: str, q: Optional[str] = None):
+def read_item(q_field: str, q_val: str):
     results = database.fetch_one(q_field, q_val)
     return results
 
-@app.get("Pick a color")
-def read_item(Color2: str, Available: Optional[str] = None):
-    return {"Color": Color2, "Available": Available}
+@app.put("/items/{item_id}")
+def update_items(item_id:str):
+    results = database.update_one(item_id)
+    return results
+
 
 

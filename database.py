@@ -21,6 +21,14 @@ def fetch_all():
     rows = cursor.fetchall()
     return handle_results(rows)
 
+def update_one(reserve_id):
+    reserve = reserve_id
+    connection = conn()
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
+    cursor.execute('UPDATE public."Cars_Inventory" SET available="no" WHERE item_id=' +reserve+';')
+    rows = cursor.fetchall()
+    return handle_results(rows)
+
 def handle_results(rows):
     columns = ('item_id', 'available', 'model', 'trim_level', 'color', 'price')
     results = []
@@ -29,3 +37,5 @@ def handle_results(rows):
 
     #return json.dumps(results, indent=2)
     return rows
+
+
