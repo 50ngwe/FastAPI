@@ -25,7 +25,7 @@ def read_item(q_field: str, q_val: str):
     results = database.fetch_one(q_field, q_val)
     return results
 
-@app.put("/items/{item_id}")
+@app.put("/itemup/{item_id}")
 def update_items(item_id:str):
     results = database.update_one(item_id)
     return results
