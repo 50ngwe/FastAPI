@@ -28,8 +28,7 @@ def update_one(field, value):
     connection = conn()
     cursor = connection.cursor(cursor_factory=RealDictCursor)
     cursor.execute('UPDATE public."Cars_Inventory" SET available='+reserve+' WHERE '+where_q+';')
-    rows = cursor.fetchall()
-    return handle_results(rows)
+    cursor.commit()
 
 def handle_results(rows):
     columns = ('item_id', 'available', 'model', 'trim_level', 'color', 'price')
