@@ -3,6 +3,7 @@ from psycopg2 import Error
 from psycopg2.extras import RealDictCursor
 import json
 
+#db connection
 def conn():
     return psycopg2.connect(database="Cars", user="techadmin@test-fast-api-db", password="Mustwork!!", host="test-fast-api-db.postgres.database.azure.com", port="5432")
 
