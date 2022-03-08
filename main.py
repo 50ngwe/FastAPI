@@ -20,7 +20,7 @@ def read_item(item_id: str, q: Optional[str] = None):
     results = database.fetch_one("item_id", item_id)
     return results
 
-@app.put("/item/{item_id}")
+@app.post("/item/{item_id}")
 def update_item(item_id: str, q: Optional[str] = None):
     results = database.update_one("item_id", item_id)
     return results
