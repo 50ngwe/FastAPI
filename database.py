@@ -4,7 +4,7 @@ from psycopg2.extras import RealDictCursor
 import json
 
 def conn():
-    return psycopg2.connect(database="Cars", user="techadmin@test-fast-api-db.postgres.database.azure.com, password="Mustwork!!", host="test-fast-api.postgres.database.azure.com", port="5432")
+    return psycopg2.connect(database="Cars", user="techadmin@test-fast-api-db, password="Mustwork!!", host="test-fast-api.postgres.database.azure.com", port="5432")
 
 def fetch_one(field, value):
     where_q = field+"='"+value+"'"
