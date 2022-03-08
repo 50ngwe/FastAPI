@@ -25,9 +25,10 @@ def fetch_all():
 def update_one(field, value):
     where_q = field+"='"+value+"'"
     reserve='no'
+    sqlquery = ""'UPDATE public."Cars_Inventory" SET available='+reserve+' WHERE '+where_q+';'""
     connection = conn()
     cursor = connection.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('UPDATE public."Cars_Inventory" SET available='+reserve+' WHERE '+where_q+';')
+    cursor.execute(sqlquery)
     cursor.commit()
 
 def handle_results(rows):
