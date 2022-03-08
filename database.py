@@ -22,8 +22,8 @@ def fetch_all():
     rows = cursor.fetchall()
     return handle_results(rows)
 
-def update_one(field, value):
-    where_q = field+"='"+value+"'"
+def update_one(field):
+    where_q = field+"='9'"
     reserve='no'
     sqlquery = ""'UPDATE public."Cars_Inventory" SET available='+reserve+' WHERE '+where_q+';'""
     connection = conn()
