@@ -22,9 +22,14 @@ def read_item(item_id: str, q: Optional[str] = None):
 
 @app.put("/item/{item_id}")
 def update_item(item_id: str):
-    results = database.update_one("item_id")
+    results = database.update_one(item_id)
+    return results
 
-
+@app.get("/item/{item_id}")
+def update_item(item_id: str):
+    results = database.update_one(item_id)
+    return results
+    
 @app.get("/items/{q_field}/{q_val}")
 def read_item(q_field: str, q_val: str):
     results = database.fetch_one(q_field, q_val)
