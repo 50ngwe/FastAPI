@@ -21,7 +21,7 @@ def read_item(item_id: str, q: Optional[str] = None):
     return results
 
 @app.put("/item/{item_id}")
-def update_item(item_id: Optional[str], q: Optional[str] = None):
+def update_item(item_id: str):
     results = database.update_one("item_id")
 
 
