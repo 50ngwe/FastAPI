@@ -16,7 +16,7 @@ def read_item():
     return results
 
 @app.get("/items/{item_id}")
-def read_item(item_id: str, q: Optional[str] = None):
+def read_item(item_id: str):
     results = database.fetch_one("item_id", item_id)
     return results
 
