@@ -30,7 +30,7 @@ def update_one(item_id):
         cursor = connection.cursor(cursor_factory=RealDictCursor)
         #cursor = connection.cursor()
         sql_update_query = """UPDATE public.\"Cars_Inventory\" SET available=%s WHERE item_id=%s"""
-        cursor.execute(sql_update_query, ('no', item_id))
+        cursor.execute(sql_update_query, ('Not Available', item_id))
         #connection.commit()
         count = cursor.rowcount
         print(count, "Record Updated successfully ")
