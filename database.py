@@ -24,6 +24,7 @@ def fetch_all():
     rows = cursor.fetchall()
     return handle_results(rows)
 
+#change car availability status
 def update_one(item_id):
     try:
         connection = conn()
